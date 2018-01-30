@@ -16,6 +16,7 @@ import java.awt.geom.AffineTransform;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
+
 public class TitlesPanel
 extends JPanel
 implements ActionListener {
@@ -25,6 +26,10 @@ implements ActionListener {
     private int start_angle = 0;
     private int shape;
 
+    /**
+     *  Выбор параметров и запуск анимации
+     * @param _shape локальная переменная
+     */
     public TitlesPanel(int _shape) {
         this.shape = _shape;
         this.animation = new Timer(50, this);

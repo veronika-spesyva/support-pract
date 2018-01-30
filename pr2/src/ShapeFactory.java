@@ -16,9 +16,16 @@ public class ShapeFactory {
     public Shape shape;
     public BasicStroke stroke = new BasicStroke(3.0f);
     public Paint paint;
+    /**
+     * Задается ширирина и высота фигур
+     */
     public int width = 25;
     public int height = 25;
 
+    /**
+     *Метод выбора параметров и настройки
+     * @param shape_type установка номера для выбора нужной формы
+     */
     public ShapeFactory(int shape_type) {
         switch (shape_type / 10) {
             case 1: {
@@ -51,6 +58,7 @@ public class ShapeFactory {
                 throw new Error("type is nusupported");
             }
         }
+
         switch (shape_type % 10) {
             case 1: {
                 this.stroke = new BasicStroke(3.0f);
@@ -77,6 +85,14 @@ public class ShapeFactory {
         }
     }
 
+    /**
+     * Метод создания формы фигуры
+     * @param arms количество граней
+     * @param center координаты центра
+     * @param rOuter рассчёт положения точек
+     * @param rInner рассчёт положения точек
+     * @return создание фигуры
+     */
     private static Shape createStar(int arms, Point center, double rOuter, double rInner) {
         double angle = 3.141592653589793 / (double)arms;
         GeneralPath path = new GeneralPath();
